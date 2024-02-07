@@ -2,8 +2,8 @@
 
 local random = math.random
 math.randomseed(os.time()^5)
-rednet.open(peripheral.find("modem"))
-rednet.host("SatelliteCC", os.getComputerID())
+peripheral.find("modem", rednet.open)
+rednet.host("SatelliteCC", tostring(os.getComputerID()))
 
 local function mainLoop()
     while true do
